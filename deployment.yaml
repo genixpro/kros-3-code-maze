@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: kros3
+  name: kros3
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: kros3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: kros3
+    spec:
+      containers:
+        - image: gcr.io/kwola-cloud/kros3:__REVISION_ID__
+          imagePullPolicy: IfNotPresent
+          name: kros3-sha256
+          resources:
+            requests:
+              cpu: 100m
+              memory: 250Mi
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 15
