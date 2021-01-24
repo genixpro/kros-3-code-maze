@@ -7,49 +7,105 @@ class DecoyButtons extends React.Component
 {
     decoyButton1Pressed()
     {
-        console.log("decoy 1!");
+        if (this.props.option1)
+        {
+            console.log("decoy 1 with option1!");
+        }
+        else
+        {
+            console.log("decoy 1 without option1!");
+        }
     }
 
 
     decoyButton2Pressed()
     {
-        console.log("decoy 2!");
+        if (this.props.option2)
+        {
+            console.log("decoy 2 with option2!");
+        }
+        else
+        {
+            console.log("decoy 2 without option2!");
+        }
     }
 
 
     decoyButton3Pressed()
     {
-        console.log("decoy 3!");
+        if (this.props.option3)
+        {
+            console.log("decoy 3 with option3!");
+        }
+        else
+        {
+            console.log("decoy 3 without option3!");
+        }
     }
 
 
     decoyButton4Pressed()
     {
-        console.log("decoy 4!");
+        if (this.props.option1)
+        {
+            console.log("decoy 4 with option1!");
+        }
+        else
+        {
+            console.log("decoy 4 without option1!");
+        }
     }
 
 
     decoyButton5Pressed()
     {
-        console.log("decoy 5!");
+        if (this.props.option2)
+        {
+            console.log("decoy 5 with option2!");
+        }
+        else
+        {
+            console.log("decoy 5 without option2!");
+        }
     }
 
 
     decoyButton6Pressed()
     {
-        console.log("decoy 6!");
+        if (this.props.option3)
+        {
+            console.log("decoy 6 with option3!");
+        }
+        else
+        {
+            console.log("decoy 6 without option3!");
+        }
     }
 
 
     decoyButton7Pressed()
     {
-        console.log("decoy 7!");
+        if (this.props.option1 && this.props.option2)
+        {
+            console.log("decoy 7 with option1 and option2!");
+        }
+        else
+        {
+            console.log("decoy 7 without option1 and option2!");
+        }
     }
 
 
     decoyButton8Pressed()
     {
-        console.log("decoy 8!");
+        if (this.props.option1 && this.props.option2)
+        {
+            console.log("decoy 8 with option1 and option2!");
+        }
+        else
+        {
+            console.log("decoy 8 without option1 and option2!");
+        }
     }
 
 
@@ -139,16 +195,40 @@ class BasicForm1 extends React.Component
     changeEmail(newValue)
     {
         this.setState({email: newValue})
+        if (this.props.option3)
+        {
+            console.log("change email with option3!");
+        }
+        else
+        {
+            console.log("change email without option3!");
+        }
     }
 
     changeNumber(newValue)
     {
         this.setState({number: newValue})
+        if (this.props.option2)
+        {
+            console.log("change number with option2!");
+        }
+        else
+        {
+            console.log("change number without option2!");
+        }
     }
 
     changeAnyText(newValue)
     {
         this.setState({text: newValue})
+        if (this.props.option1)
+        {
+            console.log("change text with option1!");
+        }
+        else
+        {
+            console.log("change text without option1!");
+        }
     }
 
     submitClicked()
@@ -252,6 +332,14 @@ class BasicForm2 extends React.Component
         else
         {
             this.setState({validEmail: false});
+            if (this.props.option1)
+            {
+                console.log("email invalid with option1!");
+            }
+            else
+            {
+                console.log("email invalid without option1!");
+            }
         }
 
         if (validateNumber(this.state.number))
@@ -261,6 +349,14 @@ class BasicForm2 extends React.Component
         else
         {
             this.setState({validNumber: false});
+            if (this.props.option2)
+            {
+                console.log("number invalid with option2!");
+            }
+            else
+            {
+                console.log("number invalid without option2!");
+            }
         }
 
         if (validateEmail(this.state.email) && validateNumber(this.state.number) && this.state.text)
@@ -270,6 +366,14 @@ class BasicForm2 extends React.Component
         else
         {
             this.setState({allValid: false});
+            if (this.props.option3)
+            {
+                console.log("text invalid with option3!");
+            }
+            else
+            {
+                console.log("text invalid without option3!");
+            }
         }
     }
 
@@ -347,6 +451,14 @@ class BasicForm3 extends React.Component
         if (this.state.testText1 === "test1")
         {
             this.setState({validText1: true});
+            if (this.props.option3)
+            {
+                console.log("text1 validated with option3!");
+            }
+            else
+            {
+                console.log("text1 validated without option3!");
+            }
         }
         else
         {
@@ -360,11 +472,27 @@ class BasicForm3 extends React.Component
         else
         {
             this.setState({validText2: false});
+            if (this.props.option2)
+            {
+                console.log("text2 validated with option2!");
+            }
+            else
+            {
+                console.log("text2 validated without option2!");
+            }
         }
 
         if (this.state.testText3 === "test3")
         {
             this.setState({validText3: true});
+            if (this.props.option1)
+            {
+                console.log("text3 validated with option1!");
+            }
+            else
+            {
+                console.log("text3 validated without option1!");
+            }
         }
         else
         {
@@ -374,10 +502,26 @@ class BasicForm3 extends React.Component
         if (this.state.testText4 === "test4")
         {
             this.setState({validText4: true});
+            if (this.props.option1)
+            {
+                console.log("text4 validated with option1!");
+            }
+            else
+            {
+                console.log("text4 validated without option1!");
+            }
         }
         else
         {
             this.setState({validText4: false});
+            if (this.props.option3)
+            {
+                console.log("text1 invalid with option3!");
+            }
+            else
+            {
+                console.log("text1 invalid without option3!");
+            }
         }
 
         if (this.state.testText1 === "test1" && this.state.testText2 === "test2" && this.state.testText3 === "test3" && this.state.testText4 === "test4")
@@ -562,10 +706,73 @@ class BasicForm4 extends React.Component
 
 
 
+class CheckoutFlow extends React.Component
+{
+    state = {
+        step: 0
+    }
+
+    step1SuccessClicked()
+    {
+        this.setState({step: 1});
+    }
+
+    step2SuccessClicked()
+    {
+        this.setState({step: 2});
+    }
+
+    step3SuccessClicked()
+    {
+        this.setState({step: 3});
+    }
+
+    step4SuccessClicked()
+    {
+        this.props.onFlowSuccess();
+    }
+
+    render()
+    {
+        return <div className={"form-wrapper"}>
+            {
+                this.state.step === 0 ?
+                    <BasicForm1
+                        onFormSuccess={() => this.step1SuccessClicked()}
+                    /> : null
+            }
+            {
+                this.state.step === 1 ?
+                    <BasicForm2
+                        onFormSuccess={() => this.step2SuccessClicked()}
+                    /> : null
+            }
+            {
+                this.state.step === 2 ?
+                    <BasicForm3
+                        onFormSuccess={() => this.step3SuccessClicked()}
+                    /> : null
+            }
+            {
+                this.state.step === 3 ?
+                    <BasicForm4
+                        onFormSuccess={() => this.step4SuccessClicked()}
+                    /> : null
+            }
+
+
+        </div>;
+    }
+}
+
+
 class App extends React.Component {
 
     state = {
-        page: 'home'
+        page: 'home',
+        option1: false,
+        option2: false,
+        option3: false
     }
 
     goToHomePage()
@@ -611,6 +818,36 @@ class App extends React.Component {
     validateFormSuccess()
     {
         this.setState({page: 'home'});
+    }
+
+    goToCheckoutFlow()
+    {
+        this.setState({page: 'checkout'});
+    }
+
+    goToOptionsScreen()
+    {
+        this.setState({page: 'options'});
+    }
+
+    checkoutFlowSuccess()
+    {
+        this.setState({page: 'home'});
+    }
+
+    changeOption1(newValue)
+    {
+        this.setState({option1: newValue})
+    }
+
+    changeOption2(newValue)
+    {
+        this.setState({option2: newValue})
+    }
+
+    changeOption3(newValue)
+    {
+        this.setState({option3: newValue})
     }
 
 
@@ -662,7 +899,17 @@ class App extends React.Component {
 
                                 <br/>
                                 <br/>
-                                <DecoyButtons />
+
+                                <Button color="primary" onClick={() => this.goToCheckoutFlow()}>Checkout Flow</Button>
+
+                                <br/>
+                                <br/>
+
+                                <Button color="primary" onClick={() => this.goToOptionsScreen()}>Options</Button>
+
+                                <br/>
+                                <br/>
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                             </div> : null
 
@@ -682,13 +929,14 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                                 <br/>
                                 <br/>
 
                                 <BasicForm1
                                     onFormSuccess={() => this.goToFormSuccess()}
+                                    option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
                                 />
 
                             </div> : null
@@ -714,7 +962,7 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                             </div> : null
 
@@ -736,13 +984,14 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                                 <br/>
                                 <br/>
 
                                 <BasicForm1
                                     onFormSuccess={() => this.goToFormSuccess()}
+                                    option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
                                 />
 
                             </div> : null
@@ -767,12 +1016,13 @@ class App extends React.Component {
 
                                 <BasicForm2
                                     onFormSuccess={() => this.goToFormSuccess()}
+                                    option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
                                 />
 
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                             </div> : null
 
@@ -794,13 +1044,14 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                                 <br/>
                                 <br/>
 
                                 <BasicForm3
                                     onFormSuccess={() => this.goToFormSuccess()}
+                                    option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
                                 />
 
                             </div> : null
@@ -825,12 +1076,13 @@ class App extends React.Component {
 
                                 <BasicForm4
                                     onFormSuccess={() => this.goToFormSuccess()}
+                                    option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
                                 />
 
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                             </div> : null
 
@@ -854,10 +1106,59 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
 
                             </div> : null
 
+                    }
+
+                    {
+                        this.state.page === 'checkout' ?
+                            <div className={"page"}>
+
+                                <Button color="success" onClick={() => this.goToHomePage()}>Go to the home page</Button>
+
+                                <br/>
+                                <br/>
+
+                                <div>
+                                    <span>You're inside the checkout flow</span>
+
+                                    <CheckoutFlow
+                                        onFlowSuccess={() => this.checkoutFlowSuccess()}
+                                    />
+                                </div>
+
+                                <br/>
+                                <br/>
+
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+
+                            </div> : null
+                    }
+
+                    {
+                        this.state.page === 'options' ?
+                            <div className={"page"}>
+
+                                <Button color="success" onClick={() => this.goToHomePage()}>Go to the home page</Button>
+
+                                <br/>
+                                <br/>
+
+                                <div>
+                                    <span>You're inside the options screen!</span>
+
+                                    <div>Option 1: <input type={"checkbox"} checked={this.state.option1} onChange={(evt) => this.changeOption1(!this.state.option1)}/></div>
+                                    <div><br/></div>
+                                    <div>Option 2: <input type={"checkbox"} checked={this.state.option2} onChange={(evt) => this.changeOption2(!this.state.option2)}/></div>
+                                    <div><br/></div>
+                                    <div>Option 3: <input type={"checkbox"} checked={this.state.option3} onChange={(evt) => this.changeOption3(!this.state.option3)}/></div>
+                                    <div><br/></div>
+
+                                </div>
+
+                            </div> : null
                     }
                 </div>
             </div>
