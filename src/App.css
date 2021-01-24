@@ -24,7 +24,7 @@
 
 .page
 {
-  width: 50vw;
+
 }
 
 .menu-button:not(:first-child)
@@ -48,4 +48,21 @@
   display: flex;
   flex-direction: column;
 
+}
+
+.home_buttons
+{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.home-button
+{
+  margin-right: 20px;
+}
+
+.paths-done-list
+{
+  font-size: 10px;
 }

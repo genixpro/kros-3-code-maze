@@ -9,11 +9,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option1)
         {
-            console.log("decoy 1 with option1!");
+            this.props.markPathAsDone("db01");
         }
         else
         {
-            console.log("decoy 1 without option1!");
+            this.props.markPathAsDone("db02");
         }
     }
 
@@ -22,11 +22,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option2)
         {
-            console.log("decoy 2 with option2!");
+            this.props.markPathAsDone("db03");
         }
         else
         {
-            console.log("decoy 2 without option2!");
+            this.props.markPathAsDone("db04");
         }
     }
 
@@ -35,11 +35,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option3)
         {
-            console.log("decoy 3 with option3!");
+            this.props.markPathAsDone("db05");
         }
         else
         {
-            console.log("decoy 3 without option3!");
+            this.props.markPathAsDone("db06");
         }
     }
 
@@ -48,11 +48,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option1)
         {
-            console.log("decoy 4 with option1!");
+            this.props.markPathAsDone("db07");
         }
         else
         {
-            console.log("decoy 4 without option1!");
+            this.props.markPathAsDone("db08");
         }
     }
 
@@ -61,11 +61,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option2)
         {
-            console.log("decoy 5 with option2!");
+            this.props.markPathAsDone("db09");
         }
         else
         {
-            console.log("decoy 5 without option2!");
+            this.props.markPathAsDone("db10");
         }
     }
 
@@ -74,11 +74,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option3)
         {
-            console.log("decoy 6 with option3!");
+            this.props.markPathAsDone("db11");
         }
         else
         {
-            console.log("decoy 6 without option3!");
+            this.props.markPathAsDone("db12");
         }
     }
 
@@ -87,11 +87,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option1 && this.props.option2)
         {
-            console.log("decoy 7 with option1 and option2!");
+            this.props.markPathAsDone("db13");
         }
         else
         {
-            console.log("decoy 7 without option1 and option2!");
+            this.props.markPathAsDone("db14");
         }
     }
 
@@ -100,11 +100,11 @@ class DecoyButtons extends React.Component
     {
         if (this.props.option1 && this.props.option2)
         {
-            console.log("decoy 8 with option1 and option2!");
+            this.props.markPathAsDone("db15");
         }
         else
         {
-            console.log("decoy 8 without option1 and option2!");
+            this.props.markPathAsDone("db16");
         }
     }
 
@@ -132,22 +132,22 @@ class BasicFunctionalButtons extends React.Component
 {
     arbitraryFunction1()
     {
-        console.log("function1!");
+        this.props.markPathAsDone("f1");
     }
 
     arbitraryFunction2()
     {
-        console.log("function1!");
+        this.props.markPathAsDone("f2");
     }
 
     arbitraryFunction3()
     {
-        console.log("function1!");
+        this.props.markPathAsDone("f3");
     }
 
     arbitraryFunction4()
     {
-        console.log("function4!");
+        this.props.markPathAsDone("f4");
     }
 
 
@@ -197,11 +197,11 @@ class BasicForm1 extends React.Component
         this.setState({email: newValue})
         if (this.props.option3)
         {
-            console.log("change email with option3!");
+            this.props.markPathAsDone("bf1-01");
         }
         else
         {
-            console.log("change email without option3!");
+            this.props.markPathAsDone("bf1-02");
         }
     }
 
@@ -210,11 +210,11 @@ class BasicForm1 extends React.Component
         this.setState({number: newValue})
         if (this.props.option2)
         {
-            console.log("change number with option2!");
+            this.props.markPathAsDone("bf1-03");
         }
         else
         {
-            console.log("change number without option2!");
+            this.props.markPathAsDone("bf1-04");
         }
     }
 
@@ -223,11 +223,11 @@ class BasicForm1 extends React.Component
         this.setState({text: newValue})
         if (this.props.option1)
         {
-            console.log("change text with option1!");
+            this.props.markPathAsDone("bf1-05");
         }
         else
         {
-            console.log("change text without option1!");
+            this.props.markPathAsDone("bf1-06");
         }
     }
 
@@ -235,34 +235,41 @@ class BasicForm1 extends React.Component
     {
         if (validateEmail(this.state.email))
         {
+            this.props.markPathAsDone("bf1-07");
             this.setState({validEmail: true});
         }
         else
         {
+            this.props.markPathAsDone("bf1-08");
             this.setState({validEmail: false});
         }
 
         if (validateNumber(this.state.number))
         {
+            this.props.markPathAsDone("bf1-09");
             this.setState({validNumber: true});
         }
         else
         {
+            this.props.markPathAsDone("bf1-10");
             this.setState({validNumber: false});
         }
 
         if (validateEmail(this.state.email) && validateNumber(this.state.number) && this.state.text)
         {
+            this.props.markPathAsDone("bf1-11");
             this.setState({allValid: true});
         }
         else
         {
+            this.props.markPathAsDone("bf1-12");
             this.setState({allValid: false});
         }
     }
 
     goToFormSuccessPage()
     {
+        this.props.markPathAsDone("bf1-13");
         this.props.onFormSuccess();
     }
 
@@ -310,16 +317,19 @@ class BasicForm2 extends React.Component
 
     changeEmail(newValue)
     {
+        this.props.markPathAsDone("bf2-01");
         this.setState({email: newValue})
     }
 
     changeNumber(newValue)
     {
+        this.props.markPathAsDone("bf2-02");
         this.setState({number: newValue})
     }
 
     changeAnyText(newValue)
     {
+        this.props.markPathAsDone("bf2-03");
         this.setState({text: newValue})
     }
 
@@ -327,58 +337,65 @@ class BasicForm2 extends React.Component
     {
         if (validateEmail(this.state.email))
         {
+            this.props.markPathAsDone("bf2-04");
             this.setState({validEmail: true});
         }
         else
         {
+            this.props.markPathAsDone("bf2-05");
             this.setState({validEmail: false});
             if (this.props.option1)
             {
-                console.log("email invalid with option1!");
+                this.props.markPathAsDone("bf2-06");
             }
             else
             {
-                console.log("email invalid without option1!");
+                this.props.markPathAsDone("bf2-07");
             }
         }
 
         if (validateNumber(this.state.number))
         {
+            this.props.markPathAsDone("bf2-08");
             this.setState({validNumber: true});
         }
         else
         {
+            this.props.markPathAsDone("bf2-09");
             this.setState({validNumber: false});
             if (this.props.option2)
             {
-                console.log("number invalid with option2!");
+                this.props.markPathAsDone("bf2-10");
             }
             else
             {
-                console.log("number invalid without option2!");
+                this.props.markPathAsDone("bf2-11");
             }
         }
 
         if (validateEmail(this.state.email) && validateNumber(this.state.number) && this.state.text)
         {
+            this.props.markPathAsDone("bf2-12");
             this.setState({allValid: true});
         }
         else
         {
+            this.props.markPathAsDone("bf2-13");
             this.setState({allValid: false});
             if (this.props.option3)
             {
-                console.log("text invalid with option3!");
+                this.props.markPathAsDone("bf2-14");
             }
             else
             {
-                console.log("text invalid without option3!");
+                this.props.markPathAsDone("bf2-15");
             }
         }
     }
 
     goToFormSuccessPage()
     {
+        this.props.markPathAsDone("bf2-16");
         this.props.onFormSuccess();
     }
 
@@ -428,21 +445,25 @@ class BasicForm3 extends React.Component
 
     changeText1(newValue)
     {
+        this.props.markPathAsDone("bf3-01");
         this.setState({testText1: newValue})
     }
 
     changeText2(newValue)
     {
+        this.props.markPathAsDone("bf3-02");
         this.setState({testText2: newValue})
     }
 
     changeText3(newValue)
     {
+        this.props.markPathAsDone("bf3-03");
         this.setState({testText3: newValue})
     }
 
     changeText4(newValue)
     {
+        this.props.markPathAsDone("bf3-04");
         this.setState({testText4: newValue})
     }
 
@@ -450,92 +471,103 @@ class BasicForm3 extends React.Component
     {
         if (this.state.testText1 === "test1")
         {
+            this.props.markPathAsDone("bf3-05");
             this.setState({validText1: true});
             if (this.props.option3)
             {
-                console.log("text1 validated with option3!");
+                this.props.markPathAsDone("bf3-06");
             }
             else
             {
-                console.log("text1 validated without option3!");
+                this.props.markPathAsDone("bf3-07");
             }
         }
         else
         {
+            this.props.markPathAsDone("bf3-08");
             this.setState({validText1: false});
         }
 
         if (this.state.testText2 === "test2")
         {
+            this.props.markPathAsDone("bf3-09");
             this.setState({validText2: true});
         }
         else
         {
+            this.props.markPathAsDone("bf3-10");
             this.setState({validText2: false});
             if (this.props.option2)
             {
-                console.log("text2 validated with option2!");
+                this.props.markPathAsDone("bf3-11");
             }
             else
             {
-                console.log("text2 validated without option2!");
+                this.props.markPathAsDone("bf3-12");
             }
         }
 
         if (this.state.testText3 === "test3")
         {
+            this.props.markPathAsDone("bf3-13");
             this.setState({validText3: true});
             if (this.props.option1)
             {
-                console.log("text3 validated with option1!");
+                this.props.markPathAsDone("bf3-14");
             }
             else
             {
-                console.log("text3 validated without option1!");
+                this.props.markPathAsDone("bf3-15");
             }
         }
         else
         {
+            this.props.markPathAsDone("bf3-16");
             this.setState({validText3: false});
         }
 
         if (this.state.testText4 === "test4")
         {
+            this.props.markPathAsDone("bf3-17");
             this.setState({validText4: true});
             if (this.props.option1)
             {
-                console.log("text4 validated with option1!");
+                this.props.markPathAsDone("bf3-18");
             }
             else
             {
-                console.log("text4 validated without option1!");
+                this.props.markPathAsDone("bf3-19");
             }
         }
         else
         {
+            this.props.markPathAsDone("bf3-20");
             this.setState({validText4: false});
             if (this.props.option3)
             {
-                console.log("text1 invalid with option3!");
+                this.props.markPathAsDone("bf3-21");
             }
             else
             {
-                console.log("text1 invalid without option3!");
+                this.props.markPathAsDone("bf3-22");
             }
         }
 
         if (this.state.testText1 === "test1" && this.state.testText2 === "test2" && this.state.testText3 === "test3" && this.state.testText4 === "test4")
         {
+            this.props.markPathAsDone("bf3-23");
             this.setState({allValid: true});
         }
         else
         {
+            this.props.markPathAsDone("bf3-24");
             this.setState({allValid: false});
         }
     }
 
     goToFormSuccessPage()
     {
+        this.props.markPathAsDone("bf3-25");
         this.props.onFormSuccess();
     }
 
@@ -594,21 +626,25 @@ class BasicForm4 extends React.Component
 
     changeText1(newValue)
     {
+        this.props.markPathAsDone("bf4-01");
         this.setState({testText1: newValue})
     }
 
     changeText2(newValue)
     {
+        this.props.markPathAsDone("bf4-02");
         this.setState({testText2: newValue})
     }
 
     changeText3(newValue)
     {
+        this.props.markPathAsDone("bf4-03");
         this.setState({testText3: newValue})
     }
 
     changeText4(newValue)
     {
+        this.props.markPathAsDone("bf4-04");
         this.setState({testText4: newValue})
     }
 
@@ -616,52 +652,63 @@ class BasicForm4 extends React.Component
     {
         if (this.state.testText1 === "test1")
         {
+            this.props.markPathAsDone("bf4-05");
             this.setState({validText1: true});
         }
         else
         {
+            this.props.markPathAsDone("bf4-06");
             this.setState({validText1: false});
         }
 
         if (this.state.testText2 === "test2")
         {
+            this.props.markPathAsDone("bf4-07");
             this.setState({validText2: true});
         }
         else
         {
+            this.props.markPathAsDone("bf4-08");
             this.setState({validText2: false});
         }
 
         if (this.state.testText3 === "test3")
         {
+            this.props.markPathAsDone("bf4-09");
             this.setState({validText3: true});
         }
         else
         {
+            this.props.markPathAsDone("bf4-10");
             this.setState({validText3: false});
         }
 
         if (this.state.testText4 === "test4")
         {
+            this.props.markPathAsDone("bf4-11");
             this.setState({validText4: true});
         }
         else
         {
+            this.props.markPathAsDone("bf4-12");
             this.setState({validText4: false});
         }
 
         if (this.state.testText1 === "test1" && this.state.testText2 === "test2" && this.state.testText3 === "test3" && this.state.testText4 === "test4")
         {
+            this.props.markPathAsDone("bf4-13");
             this.setState({allValid: true});
         }
         else
         {
+            this.props.markPathAsDone("bf4-14");
             this.setState({allValid: false});
         }
     }
 
     goToFormSuccessPage()
     {
+        this.props.markPathAsDone("bf4-15");
         this.props.onFormSuccess();
     }
 
@@ -714,21 +761,25 @@ class CheckoutFlow extends React.Component
 
     step1SuccessClicked()
     {
+        this.props.markPathAsDone("co1");
         this.setState({step: 1});
     }
 
     step2SuccessClicked()
     {
+        this.props.markPathAsDone("co2");
         this.setState({step: 2});
     }
 
     step3SuccessClicked()
     {
+        this.props.markPathAsDone("co3");
         this.setState({step: 3});
     }
 
     step4SuccessClicked()
     {
+        this.props.markPathAsDone("co4");
         this.props.onFlowSuccess();
     }
 
@@ -739,24 +790,32 @@ class CheckoutFlow extends React.Component
                 this.state.step === 0 ?
                     <BasicForm1
                         onFormSuccess={() => this.step1SuccessClicked()}
+                        option1={this.props.option1} option2={this.props.option2} option3={this.props.option3}
+                        markPathAsDone={(path) => this.props.markPathAsDone(path)}
                     /> : null
             }
             {
                 this.state.step === 1 ?
                     <BasicForm2
                         onFormSuccess={() => this.step2SuccessClicked()}
+                        option1={this.props.option1} option2={this.props.option2} option3={this.props.option3}
+                        markPathAsDone={(path) => this.props.markPathAsDone(path)}
                     /> : null
             }
             {
                 this.state.step === 2 ?
                     <BasicForm3
                         onFormSuccess={() => this.step3SuccessClicked()}
+                        option1={this.props.option1} option2={this.props.option2} option3={this.props.option3}
+                        markPathAsDone={(path) => this.props.markPathAsDone(path)}
                     /> : null
             }
             {
                 this.state.step === 3 ?
                     <BasicForm4
                         onFormSuccess={() => this.step4SuccessClicked()}
+                        option1={this.props.option1} option2={this.props.option2} option3={this.props.option3}
+                        markPathAsDone={(path) => this.props.markPathAsDone(path)}
                     /> : null
             }
 
@@ -772,109 +831,139 @@ class App extends React.Component {
         page: 'home',
         option1: false,
         option2: false,
-        option3: false
+        option3: false,
+        pathsDone: [],
+        totalPaths: (19 + 4 + 15 + 25 + 16 + 13 + 4 + 16)
+    }
+
+    markPathAsDone(path)
+    {
+        const paths = this.state.pathsDone;
+        if (paths.indexOf(path) === -1)
+        {
+            paths.push(path);
+        }
+        paths.sort();
+        this.setState({pathsDone: paths});
     }
 
     goToHomePage()
     {
+        this.markPathAsDone("h01");
         this.setState({page: 'home'});
     }
 
     goToMenuPage()
     {
+        this.markPathAsDone("h02");
         this.setState({page: 'menu'});
     }
 
     goToDeepMaze()
     {
+        this.markPathAsDone("h03");
         this.setState({page: 'deep_maze'});
     }
 
     goToDeep1()
     {
+        this.markPathAsDone("h04");
         this.setState({page: 'deep_1'});
     }
 
     goToDeep2()
     {
+        this.markPathAsDone("h05");
         this.setState({page: 'deep_2'});
     }
 
     goToDeep3()
     {
+        this.markPathAsDone("h06");
         this.setState({page: 'deep_3'});
     }
 
     goToDeep4()
     {
+        this.markPathAsDone("h07");
         this.setState({page: 'deep_4'});
     }
 
     goToFormSuccess()
     {
+        this.markPathAsDone("h08");
         this.setState({page: 'form_success'});
     }
 
     validateFormSuccess()
     {
+        this.markPathAsDone("h09");
         this.setState({page: 'home'});
     }
 
     goToCheckoutFlow()
     {
+        this.markPathAsDone("h10");
         this.setState({page: 'checkout'});
     }
 
     goToOptionsScreen()
     {
+        this.markPathAsDone("h11");
         this.setState({page: 'options'});
     }
 
     checkoutFlowSuccess()
     {
+        this.markPathAsDone("h12");
         this.setState({page: 'home'});
     }
 
     changeOption1(newValue)
     {
+        this.markPathAsDone("h13");
         this.setState({option1: newValue})
     }
 
     changeOption2(newValue)
     {
+        this.markPathAsDone("h14");
         this.setState({option2: newValue})
     }
 
     changeOption3(newValue)
     {
+        this.markPathAsDone("h15");
         this.setState({option3: newValue})
     }
 
 
     deepFunction1()
     {
-        console.log("deep1!");
+        this.markPathAsDone("h16");
     }
 
     deepFunction2()
     {
-        console.log("deep2!");
+        this.markPathAsDone("h17");
     }
 
     deepFunction3()
     {
-        console.log("deep3!");
+        this.markPathAsDone("h18");
     }
 
     deepFunction4()
     {
-        console.log("deep4!");
+        this.markPathAsDone("h19");
     }
 
 
     render() {
         return (
             <div className="App">
+                <span className={"paths-done-list"}>{this.state.pathsDone.length} / {this.state.totalPaths}: {this.state.pathsDone.join(", ")}</span>
+                <br/>
                 <header className="App-header">
                     <h3>KROS3 - The Code Maze</h3>
                     <p>This code maze is meant to act as a simple test case for Kwola.</p>
@@ -885,31 +974,17 @@ class App extends React.Component {
                         this.state.page === 'home' ?
                             <div className={"page"}>
 
-                                <Button color="success" onClick={() => this.goToHomePage()}>Go to the home page</Button>
+                                <div className={"home-buttons"}>
+                                    <Button color="success" className={"home-button"} onClick={() => this.goToHomePage()}>Go to the home page</Button>
+                                    <Button color="primary" className={"home-button"} onClick={() => this.goToMenuPage()}>Basic Menu Page</Button>
+                                    <Button color="primary" className={"home-button"} onClick={() => this.goToDeepMaze()}>Deep Maze</Button>
+                                    <Button color="primary" className={"home-button"} onClick={() => this.goToCheckoutFlow()}>Checkout Flow</Button>
+                                    <Button color="primary" className={"home-button"} onClick={() => this.goToOptionsScreen()}>Options</Button>
+                                </div>
 
                                 <br/>
                                 <br/>
-
-                                <Button color="primary" onClick={() => this.goToMenuPage()}>Basic Menu Page</Button>
-
-                                <br/>
-                                <br/>
-
-                                <Button color="primary" onClick={() => this.goToDeepMaze()}>Deep Maze</Button>
-
-                                <br/>
-                                <br/>
-
-                                <Button color="primary" onClick={() => this.goToCheckoutFlow()}>Checkout Flow</Button>
-
-                                <br/>
-                                <br/>
-
-                                <Button color="primary" onClick={() => this.goToOptionsScreen()}>Options</Button>
-
-                                <br/>
-                                <br/>
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
 
@@ -924,12 +999,12 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <BasicFunctionalButtons />
+                                <BasicFunctionalButtons markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                                 <br/>
                                 <br/>
@@ -937,6 +1012,7 @@ class App extends React.Component {
                                 <BasicForm1
                                     onFormSuccess={() => this.goToFormSuccess()}
                                     option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
+                                    markPathAsDone={(path) => this.markPathAsDone(path)}
                                 />
 
                             </div> : null
@@ -962,7 +1038,7 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
 
@@ -984,7 +1060,7 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                                 <br/>
                                 <br/>
@@ -992,6 +1068,7 @@ class App extends React.Component {
                                 <BasicForm1
                                     onFormSuccess={() => this.goToFormSuccess()}
                                     option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
+                                    markPathAsDone={(path) => this.markPathAsDone(path)}
                                 />
 
                             </div> : null
@@ -1017,12 +1094,19 @@ class App extends React.Component {
                                 <BasicForm2
                                     onFormSuccess={() => this.goToFormSuccess()}
                                     option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
+                                    markPathAsDone={(path) => this.markPathAsDone(path)}
                                 />
 
                                 <br/>
                                 <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
 
@@ -1041,10 +1125,17 @@ class App extends React.Component {
                                     <Button className={"menu-button"} color="primary" onClick={() => this.deepFunction3()}>Deep 3</Button>
                                 </div>
 
+
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                                 <br/>
                                 <br/>
@@ -1052,6 +1143,7 @@ class App extends React.Component {
                                 <BasicForm3
                                     onFormSuccess={() => this.goToFormSuccess()}
                                     option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
+                                    markPathAsDone={(path) => this.markPathAsDone(path)}
                                 />
 
                             </div> : null
@@ -1073,16 +1165,29 @@ class App extends React.Component {
 
                                 <br/>
                                 <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
 
                                 <BasicForm4
                                     onFormSuccess={() => this.goToFormSuccess()}
                                     option1={this.state.option1} option2={this.state.option2} option3={this.state.option3}
+                                    markPathAsDone={(path) => this.markPathAsDone(path)}
                                 />
 
                                 <br/>
                                 <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
 
@@ -1106,7 +1211,7 @@ class App extends React.Component {
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
 
@@ -1126,13 +1231,14 @@ class App extends React.Component {
 
                                     <CheckoutFlow
                                         onFlowSuccess={() => this.checkoutFlowSuccess()}
+                                        markPathAsDone={(path) => this.markPathAsDone(path)}
                                     />
                                 </div>
 
                                 <br/>
                                 <br/>
 
-                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} />
+                                <DecoyButtons option1={this.state.option1} option2={this.state.option2} option3={this.state.option3} markPathAsDone={(path) => this.markPathAsDone(path)} />
 
                             </div> : null
                     }
