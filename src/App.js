@@ -845,6 +845,7 @@ class App extends React.Component {
         }
         paths.sort();
         this.setState({pathsDone: paths});
+        window.kwolaCumulativeFitness = paths.length;
     }
 
     goToHomePage()
