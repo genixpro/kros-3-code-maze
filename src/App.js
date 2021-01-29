@@ -342,60 +342,57 @@ class BasicForm2 extends React.Component
         }
         else
         {
-            this.props.markPathAsDone("bf2-05");
             this.setState({validEmail: false});
             if (this.props.option1)
             {
-                this.props.markPathAsDone("bf2-06");
+                this.props.markPathAsDone("bf2-05");
             }
             else
             {
-                this.props.markPathAsDone("bf2-07");
+                this.props.markPathAsDone("bf2-06");
             }
         }
 
         if (validateNumber(this.state.number))
         {
-            this.props.markPathAsDone("bf2-08");
+            this.props.markPathAsDone("bf2-07");
             this.setState({validNumber: true});
         }
         else
         {
-            this.props.markPathAsDone("bf2-09");
             this.setState({validNumber: false});
             if (this.props.option2)
             {
-                this.props.markPathAsDone("bf2-10");
+                this.props.markPathAsDone("bf2-08");
             }
             else
             {
-                this.props.markPathAsDone("bf2-11");
+                this.props.markPathAsDone("bf2-09");
             }
         }
 
         if (validateEmail(this.state.email) && validateNumber(this.state.number) && this.state.text)
         {
-            this.props.markPathAsDone("bf2-12");
+            this.props.markPathAsDone("bf2-10");
             this.setState({allValid: true});
         }
         else
         {
-            this.props.markPathAsDone("bf2-13");
             this.setState({allValid: false});
             if (this.props.option3)
             {
-                this.props.markPathAsDone("bf2-14");
+                this.props.markPathAsDone("bf2-11");
             }
             else
             {
-                this.props.markPathAsDone("bf2-15");
+                this.props.markPathAsDone("bf2-12");
             }
         }
     }
 
     goToFormSuccessPage()
     {
-        this.props.markPathAsDone("bf2-16");
+        this.props.markPathAsDone("bf2-13");
         this.props.onFormSuccess();
     }
 
@@ -471,33 +468,44 @@ class BasicForm3 extends React.Component
     {
         if (this.state.testText1 === "test1")
         {
-            this.props.markPathAsDone("bf3-05");
             this.setState({validText1: true});
             if (this.props.option3)
             {
-                this.props.markPathAsDone("bf3-06");
+                this.props.markPathAsDone("bf3-05");
             }
             else
             {
-                this.props.markPathAsDone("bf3-07");
+                this.props.markPathAsDone("bf3-06");
             }
         }
         else
         {
-            this.props.markPathAsDone("bf3-08");
+            this.props.markPathAsDone("bf3-07");
             this.setState({validText1: false});
         }
 
         if (this.state.testText2 === "test2")
         {
-            this.props.markPathAsDone("bf3-09");
+            this.props.markPathAsDone("bf3-08");
             this.setState({validText2: true});
         }
         else
         {
-            this.props.markPathAsDone("bf3-10");
             this.setState({validText2: false});
             if (this.props.option2)
+            {
+                this.props.markPathAsDone("bf3-09");
+            }
+            else
+            {
+                this.props.markPathAsDone("bf3-10");
+            }
+        }
+
+        if (this.state.testText3 === "test3")
+        {
+            this.setState({validText3: true});
+            if (this.props.option1)
             {
                 this.props.markPathAsDone("bf3-11");
             }
@@ -506,11 +514,15 @@ class BasicForm3 extends React.Component
                 this.props.markPathAsDone("bf3-12");
             }
         }
-
-        if (this.state.testText3 === "test3")
+        else
         {
             this.props.markPathAsDone("bf3-13");
-            this.setState({validText3: true});
+            this.setState({validText3: false});
+        }
+
+        if (this.state.testText4 === "test4")
+        {
+            this.setState({validText4: true});
             if (this.props.option1)
             {
                 this.props.markPathAsDone("bf3-14");
@@ -522,52 +534,32 @@ class BasicForm3 extends React.Component
         }
         else
         {
-            this.props.markPathAsDone("bf3-16");
-            this.setState({validText3: false});
-        }
-
-        if (this.state.testText4 === "test4")
-        {
-            this.props.markPathAsDone("bf3-17");
-            this.setState({validText4: true});
-            if (this.props.option1)
-            {
-                this.props.markPathAsDone("bf3-18");
-            }
-            else
-            {
-                this.props.markPathAsDone("bf3-19");
-            }
-        }
-        else
-        {
-            this.props.markPathAsDone("bf3-20");
             this.setState({validText4: false});
             if (this.props.option3)
             {
-                this.props.markPathAsDone("bf3-21");
+                this.props.markPathAsDone("bf3-16");
             }
             else
             {
-                this.props.markPathAsDone("bf3-22");
+                this.props.markPathAsDone("bf3-17");
             }
         }
 
         if (this.state.testText1 === "test1" && this.state.testText2 === "test2" && this.state.testText3 === "test3" && this.state.testText4 === "test4")
         {
-            this.props.markPathAsDone("bf3-23");
+            this.props.markPathAsDone("bf3-18");
             this.setState({allValid: true});
         }
         else
         {
-            this.props.markPathAsDone("bf3-24");
+            this.props.markPathAsDone("bf3-19");
             this.setState({allValid: false});
         }
     }
 
     goToFormSuccessPage()
     {
-        this.props.markPathAsDone("bf3-25");
+        this.props.markPathAsDone("bf3-20");
         this.props.onFormSuccess();
     }
 
@@ -833,7 +825,7 @@ class App extends React.Component {
         option2: false,
         option3: false,
         pathsDone: [],
-        totalPaths: (19 + 4 + 15 + 25 + 16 + 13 + 4 + 16)
+        totalPaths: (16 + 4 + 13 + 13 + 20 + 15 + 4 + 19)
     }
 
     markPathAsDone(path)
