@@ -132,22 +132,22 @@ class BasicFunctionalButtons extends React.Component
 {
     arbitraryFunction1()
     {
-        this.props.markPathAsDone("f1");
+        this.props.markPathAsDone("f01");
     }
 
     arbitraryFunction2()
     {
-        this.props.markPathAsDone("f2");
+        this.props.markPathAsDone("f02");
     }
 
     arbitraryFunction3()
     {
-        this.props.markPathAsDone("f3");
+        this.props.markPathAsDone("f03");
     }
 
     arbitraryFunction4()
     {
-        this.props.markPathAsDone("f4");
+        this.props.markPathAsDone("f04");
     }
 
 
@@ -753,25 +753,25 @@ class CheckoutFlow extends React.Component
 
     step1SuccessClicked()
     {
-        this.props.markPathAsDone("co1");
+        this.props.markPathAsDone("co01");
         this.setState({step: 1});
     }
 
     step2SuccessClicked()
     {
-        this.props.markPathAsDone("co2");
+        this.props.markPathAsDone("co02");
         this.setState({step: 2});
     }
 
     step3SuccessClicked()
     {
-        this.props.markPathAsDone("co3");
+        this.props.markPathAsDone("co03");
         this.setState({step: 3});
     }
 
     step4SuccessClicked()
     {
-        this.props.markPathAsDone("co4");
+        this.props.markPathAsDone("co04");
         this.props.onFlowSuccess();
     }
 
@@ -825,7 +825,42 @@ class App extends React.Component {
         option2: false,
         option3: false,
         pathsDone: [],
+        knownPaths: [],
         totalPaths: (16 + 4 + 13 + 13 + 20 + 15 + 4 + 19)
+    }
+
+    componentDidMount()
+    {
+        this.setKnownPaths();
+    }
+
+    setKnownPaths()
+    {
+        const paths = {
+            "db": 16,
+            "f": 4,
+            "bf1-": 13,
+            "bf2-": 13,
+            "bf3-": 20,
+            "bf4-": 15,
+            "co": 4,
+            "h": 19
+        };
+
+        const knownPaths = [];
+        Object.keys(paths).forEach((prefix) =>
+        {
+            for (let c = 1; c <= paths[prefix]; c += 1)
+            {
+                let num = c.toString();
+                while (num.length < 2) num = "0" + num;
+                knownPaths.push(prefix + num);
+            }
+        });
+
+        knownPaths.sort();
+
+        this.setState({knownPaths});
     }
 
     markPathAsDone(path)
@@ -955,7 +990,18 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <span className={"paths-done-list"}>{this.state.pathsDone.length} / {this.state.totalPaths}: {this.state.pathsDone.join(", ")}</span>
+                <span className={"paths-done-list"}>{this.state.pathsDone.length} / {this.state.totalPaths}:
+                    {this.state.knownPaths.map((path) =>
+                    {
+                        if (this.state.pathsDone.indexOf(path) !== -1)
+                        {
+                            return <strong style={{"fontWeight": "boldest"}}>{path}, </strong>;
+                        }
+                        else
+                        {
+                            return <span style={{"marginRight": "1px", "fontStyle": "italic"}}>{path}, </span>;
+                        }
+                    })}</span>
                 <br/>
                 <header className="App-header">
                     <h3>KROS3 - The Code Maze</h3>
